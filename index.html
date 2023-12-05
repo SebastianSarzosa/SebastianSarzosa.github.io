@@ -54,6 +54,15 @@
             const email = document.getElementById("email").value
 
             console.log(name,email)
+
+
+            push(
+                ref(database, 'Septimo'),
+                {
+                    nombre:name,
+                    correo:email
+                }
+            );
         }
 
       </script>
