@@ -1,25 +1,61 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Formulario HTML</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/templatemo.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+
 </head>
 <body>
+    <h1>Hola Chamitos</h1>
+    <form action="">
+        <label for="">Name</label>
+        <input id="name" type="text" placeholder="Chamito CNT">
+        <label for="">Email</label>
+        <input id="email" type="email" placeholder="alguien@example.com">    
+    </form>
+    <button type="button" onclick="enviar()">Enviar</button>
 
-<h2>Formulario de contacto</h2>
 
-<form action="#" method="post">
-  <div class="form-group">
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" name="nombre" required>
-  </div>
-  <div class="form-group">
-    <label for="email">Correo electrónico:</label>
-    <input type="email" id="email" name="email" required>
-  </div>
-  <button type="submit">Enviar</button>
-</form>
+    
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
+        import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-database.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyCdol1HUlezSerGhVYwP7CurgsnbiERfYM",
+          authDomain: "coneccion-ab493.firebaseapp.com",
+          databaseURL: "https://coneccion-ab493-default-rtdb.firebaseio.com",
+          projectId: "coneccion-ab493",
+          storageBucket: "coneccion-ab493.appspot.com",
+          messagingSenderId: "1088096778093",
+          appId: "1:1088096778093:web:22e7579ba164106b424c64"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
 
+        window.crearRegistro = function () {
+            const nombre = document.getElementById("name").value;
+            const email = document.getElementById("email").value
+
+            console.log(name,email)
+        }
+
+      </script>
 </body>
 </html>
